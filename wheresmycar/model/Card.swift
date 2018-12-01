@@ -9,8 +9,8 @@
 import Foundation
 
 class Card: Codable {
-    let token: String!
-    let text: String!
-    let userDeviceId: String!
-    let section: Section!
+    var token: String!
+    var text: String!
+    var userDeviceId: String!
+    var section: Section!
 }

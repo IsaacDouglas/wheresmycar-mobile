@@ -9,6 +9,6 @@
 import Foundation
 
 class Section: Codable {
-    let code: String!
-    let parkingSpotAmount: Double!
+    var code: String!
+    var parkingSpotAmount: Double!
 }

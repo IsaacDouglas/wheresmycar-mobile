@@ -29,12 +29,17 @@ class ViewController: UIViewController {
         let aObjNavi = UINavigationController(rootViewController: objVC)
         self.present(aObjNavi, animated: true, completion: nil)
     }
-    
-    func openURL(link: String){
-        let webURL = NSURL(string: link)!
-        UIApplication.shared.open(webURL as URL)
-    }
 
+    func postJson(token: String){
+        
+        let card = Card()
+        card.token = token
+        
+        let url = "url"
+        Util().postRequest(url: url, body: card, by: { data in
+            // data
+        })
+    }
 }
 
 extension ViewController: StreamDelegate {
