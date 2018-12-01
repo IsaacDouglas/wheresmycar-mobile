@@ -103,7 +103,6 @@
 			children = (
 				9000E87A21B321C100984DD1 /* viewControllers */,
 				9000E84921B3214800984DD1 /* AppDelegate.swift */,
-				9000E84B21B3214800984DD1 /* ViewController.swift */,
 				9000E84D21B3214800984DD1 /* Main.storyboard */,
 				9000E85321B3214A00984DD1 /* Assets.xcassets */,
 				9000E85521B3214A00984DD1 /* LaunchScreen.storyboard */,
@@ -134,6 +133,7 @@
 		9000E87A21B321C100984DD1 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9000E84B21B3214800984DD1 /* ViewController.swift */,
 				9000E87B21B321F600984DD1 /* CamViewController.swift */,
 			);
 			path = viewControllers;

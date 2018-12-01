@@ -9,11 +9,16 @@
 import UIKit
 import AVFoundation
 
+protocol StreamDelegate {
+    func sendString(text: String)
+}
+
 class CamViewController: UIViewController {
 
     var qrCodeFrameView: UIView?
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
+    var delegate: StreamDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +29,19 @@ class CamViewController: UIViewController {
         backbutton.addTarget(self, action: #selector(self.backAction), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backbutton)
         
+        self.navigationItem.title = "Ler QRCODE"
+        
+        camInitialize()
+    }
+    
+    @objc func backAction() {
+        let navigationController = self.presentingViewController as? UINavigationController
+        self.dismiss(animated: true) {
+            let _ = navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    
+    func camInitialize(){
         AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
             if response {
                 //access granted
@@ -81,13 +99,6 @@ class CamViewController: UIViewController {
         }
     }
     
-    @objc func backAction() {
-        let navigationController = self.presentingViewController as? UINavigationController
-        self.dismiss(animated: true) {
-            let _ = navigationController?.popToRootViewController(animated: true)
-        }
-    }
-    
     func failed() {
         let ac = UIAlertController(title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.", preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
@@ -113,53 +124,10 @@ class CamViewController: UIViewController {
         qrCodeFrameView?.frame = CGRect.zero
     }
     
-    
-    
     func found(code: String) {
-        print(code)
-        
-        let isLink = code.starts(with: "http")
-        let title = isLink ? "Abrir link?" : "Texto"
-        self.alert(title: title, message: code, link: isLink)
+        delegate.sendString(text: code)
+        self.backAction()
     }
-    
-    func alert(title: String, message msg: String, link: Bool){
-        // insert Simple UIAlertController code here..
-        let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action:UIAlertAction) in
-            print("you have pressed the Cancel button");
-        }
-        alertController.addAction(cancelAction)
-        
-        let OKAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction) in
-            print("you have pressed OK button");
-            
-            if link{
-                self.openURL(link: msg)
-            }
-        }
-        alertController.addAction(OKAction)
-        
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func openURL(link: String){
-        let webURL = NSURL(string: link)!
-        UIApplication.shared.open(webURL as URL)
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension CamViewController: AVCaptureMetadataOutputObjectsDelegate {
@@ -186,6 +154,6 @@ extension CamViewController: AVCaptureMetadataOutputObjectsDelegate {
         let barCodeObject = previewLayer?.transformedMetadataObject(for: metadataObj)
         qrCodeFrameView?.frame = barCodeObject!.bounds
         
-        //        dismiss(animated: true)
+        dismiss(animated: true)
     }
 }

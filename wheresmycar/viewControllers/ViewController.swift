@@ -20,13 +20,27 @@ class ViewController: UIViewController {
         qrButton.addTarget(self, action: #selector(self.camAction), for: .touchUpInside)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: qrButton)
         
+        self.navigationItem.title = "Menu"
     }
     
     @objc func camAction(){
         let objVC = self.storyboard?.instantiateViewController(withIdentifier: "CamViewController") as! CamViewController
+        objVC.delegate = self
         let aObjNavi = UINavigationController(rootViewController: objVC)
         self.present(aObjNavi, animated: true, completion: nil)
     }
+    
+    func openURL(link: String){
+        let webURL = NSURL(string: link)!
+        UIApplication.shared.open(webURL as URL)
+    }
 
+}
+
+extension ViewController: StreamDelegate {
+    
+    func sendString(text: String) {
+        print(text)
+    }
 }
 
