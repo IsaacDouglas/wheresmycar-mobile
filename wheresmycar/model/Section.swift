@@ -9,6 +9,7 @@
 import Foundation
 
 class Section: Codable {
+    var _id: String!
     var code: String!
-    var parkingSpotAmount: Double!
+    var parkingSpots: Double!
 }

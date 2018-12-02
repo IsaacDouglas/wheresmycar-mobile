@@ -9,6 +9,7 @@
 import Foundation
 
 class Card: Codable {
+    var _id: String!
     var token: String!
     var text: String!
     var userDeviceId: String!

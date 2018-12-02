@@ -19,6 +19,10 @@
 		9000E87F21B32F1A00984DD1 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E87E21B32F1A00984DD1 /* Util.swift */; };
 		9000E88121B336CC00984DD1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E88021B336CC00984DD1 /* Card.swift */; };
 		9000E88321B3379D00984DD1 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000E88221B3379D00984DD1 /* Section.swift */; };
+		90BC7F1F21B43ED8006FCE87 /* Beacon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BC7F1E21B43ED8006FCE87 /* Beacon.swift */; };
+		90BC7F6121B45B14006FCE87 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 90BC7F6021B45B14006FCE87 /* GameScene.sks */; };
+		90BC7F6521B46152006FCE87 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BC7F6421B46152006FCE87 /* GameScene.swift */; };
+		90BC7F6721B47130006FCE87 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BC7F6621B47130006FCE87 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +61,10 @@
 		9000E87E21B32F1A00984DD1 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		9000E88021B336CC00984DD1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		9000E88221B3379D00984DD1 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		90BC7F1E21B43ED8006FCE87 /* Beacon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beacon.swift; sourceTree = "<group>"; };
+		90BC7F6021B45B14006FCE87 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		90BC7F6421B46152006FCE87 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		90BC7F6621B47130006FCE87 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +148,11 @@
 		9000E87A21B321C100984DD1 /* viewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				90BC7F6421B46152006FCE87 /* GameScene.swift */,
 				9000E84B21B3214800984DD1 /* ViewController.swift */,
 				9000E87B21B321F600984DD1 /* CamViewController.swift */,
+				90BC7F6021B45B14006FCE87 /* GameScene.sks */,
+				90BC7F6621B47130006FCE87 /* MapViewController.swift */,
 			);
 			path = viewControllers;
 			sourceTree = "<group>";
@@ -152,6 +163,7 @@
 				9000E87E21B32F1A00984DD1 /* Util.swift */,
 				9000E88021B336CC00984DD1 /* Card.swift */,
 				9000E88221B3379D00984DD1 /* Section.swift */,
+				90BC7F1E21B43ED8006FCE87 /* Beacon.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -262,6 +274,7 @@
 			files = (
 				9000E85721B3214A00984DD1 /* LaunchScreen.storyboard in Resources */,
 				9000E85421B3214A00984DD1 /* Assets.xcassets in Resources */,
+				90BC7F6121B45B14006FCE87 /* GameScene.sks in Resources */,
 				9000E84F21B3214800984DD1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,13 +300,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90BC7F6521B46152006FCE87 /* GameScene.swift in Sources */,
 				9000E84C21B3214800984DD1 /* ViewController.swift in Sources */,
 				9000E88121B336CC00984DD1 /* Card.swift in Sources */,
+				90BC7F6721B47130006FCE87 /* MapViewController.swift in Sources */,
 				9000E84A21B3214800984DD1 /* AppDelegate.swift in Sources */,
 				9000E88321B3379D00984DD1 /* Section.swift in Sources */,
 				9000E87F21B32F1A00984DD1 /* Util.swift in Sources */,
 				9000E87C21B321F600984DD1 /* CamViewController.swift in Sources */,
 				9000E85221B3214800984DD1 /* wheresmycar.xcdatamodeld in Sources */,
+				90BC7F1F21B43ED8006FCE87 /* Beacon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

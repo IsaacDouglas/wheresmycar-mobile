@@ -43,6 +43,10 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>${PRODUCT_NAME} need to access your camera for scanning QR code</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>${PRODUCT_NAME} need to access your location for scanning Beacon</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>${PRODUCT_NAME} need to access your location for scanning Beacon</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
