@@ -149,9 +149,9 @@
 			isa = PBXGroup;
 			children = (
 				90BC7F6421B46152006FCE87 /* GameScene.swift */,
+				90BC7F6021B45B14006FCE87 /* GameScene.sks */,
 				9000E84B21B3214800984DD1 /* ViewController.swift */,
 				9000E87B21B321F600984DD1 /* CamViewController.swift */,
-				90BC7F6021B45B14006FCE87 /* GameScene.sks */,
 				90BC7F6621B47130006FCE87 /* MapViewController.swift */,
 			);
 			path = viewControllers;

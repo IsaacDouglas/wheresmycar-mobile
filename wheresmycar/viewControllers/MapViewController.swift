@@ -19,6 +19,7 @@ class MapViewController: UIViewController {
     var scene: SKScene!
     
     var list: [CGPoint] = []
+    var cicleList: [SKShapeNode] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +57,19 @@ class MapViewController: UIViewController {
         let p3 = SKSpriteNode(color: UIColor.blue, size: CGSize(width: 5, height: 5))
         p3.position = list[2]
         self.scene.addChild(p3)
+        
+        
+        for i in list {
+            let p = SKSpriteNode(color: UIColor.blue, size: CGSize(width: 5, height: 5))
+            p.position = i
+            self.scene.addChild(p)
+            
+            let s = SKShapeNode(circleOfRadius: 10)
+            s.strokeColor = UIColor.yellow
+            s.position = i
+            self.scene.addChild(s)
+            self.cicleList.append(s)
+        }
         
     }
     
@@ -150,5 +164,13 @@ extension MapViewController: CLLocationManagerDelegate {
             
             self.label.text = "\(getDistance(rssi: be.rssi))"
         }
+        
+        
+//        if beacons.count > 1 {
+//            self.cicleList[2]
+//        }else{
+//            self.cicleList[2].run(SKAction.scale(to: Int(getDistance(rssi: beacons[0].rssi)), duration: 1))
+//        }
+        
     }
 }

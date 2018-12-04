@@ -26,11 +26,11 @@ class ViewController: UIViewController {
 //        qrButton.addTarget(self, action: #selector(self.camAction), for: .touchUpInside)
 //        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: qrButton)
 //
-//        let mapButton = UIButton(type: .custom)
-//        mapButton.setTitle("MAPA", for: .normal)
-//        mapButton.setTitleColor(mapButton.tintColor, for: .normal)
-//        mapButton.addTarget(self, action: #selector(self.mapAction), for: .touchUpInside)
-//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: mapButton)
+        let mapButton = UIButton(type: .custom)
+        mapButton.setTitle("MAPA", for: .normal)
+        mapButton.setTitleColor(mapButton.tintColor, for: .normal)
+        mapButton.addTarget(self, action: #selector(self.mapAction), for: .touchUpInside)
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: mapButton)
         
         centerView.layer.cornerRadius = centerView.frame.width / 2
         centerView.layer.shadowOffset = CGSize(width: 5, height: 5)
